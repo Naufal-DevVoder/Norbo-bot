@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const { Prefix, Token, Owner_ID, Color } = require("./config.json");
-if (Prefix === null) Prefix = `!`;
+if (Prefix === null) Prefix = `c.`;
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -15,8 +15,8 @@ client.on("ready", async () => {
 client.on("message", async message => {
     if (message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))) {
         let embed = new Discord.MessageEmbed()
-            .setColor(Color)
-            .setDescription(`My Prefix Is ${Prefix} For More Information Use ${Prefix}Help`)
+            .setColor("RANDOM")
+            .setDescription(`My Prefix Is ``${Prefix}`` For More Information Use ``${Prefix}Help```)
             .setTimestamp();
         return message.channel.send(embed);
     }
